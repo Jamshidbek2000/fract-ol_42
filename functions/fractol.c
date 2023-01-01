@@ -6,7 +6,7 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 16:17:47 by jergashe          #+#    #+#             */
-/*   Updated: 2022/12/31 18:59:31 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/01 12:02:13 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	input_error(void)
 	exit(EXIT_FAILURE);
 }
 
-int	main(int argc, char **argv)
+void	check_passed_args_and_run(int argc, char **argv)
 {
 	if (argc > 1)
 		to_lower_case(argv[1]);
@@ -47,6 +47,11 @@ int	main(int argc, char **argv)
 		julia(ft_atof(argv[2]), ft_atof(argv[3]));
 	else
 		input_error();
+}
+
+int	main(int argc, char **argv)
+{
+	check_passed_args_and_run(argc, argv);
 	leak_check();
 	return (0);
 }

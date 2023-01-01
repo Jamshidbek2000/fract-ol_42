@@ -6,7 +6,7 @@
 #    By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 11:33:08 by jergashe          #+#    #+#              #
-#    Updated: 2022/12/31 19:51:55 by jergashe         ###   ########.fr        #
+#    Updated: 2022/12/31 20:01:05 by jergashe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -92,16 +92,16 @@ $(GLFW3):
 	fi
 
 clean:
-	cd libft_42 && make clean
 	@echo "$(RED)Removing .o files.$(DEF_COLOR)"
-	$(RM) $(OBJS) 
+	$(RM) $(OBJS)
+	make clean -C ./libft_42
 	make clean -C ./MLX42
 	@echo "$(CYAN)MLX42, fractol .o files has been removed.$(DEF_COLOR)"
 
 fclean:
-	cd libft_42 && make fclean
 	@echo "$(RED)Deleting objects.$(DEF_COLOR)"
 	$(RM) $(OBJS) $(NAME)
+	make fclean -C ./libft_42
 	make fclean -C ./MLX42
 	rm -rf MLX42/glfw_lib/ MLX42/include/GLFW/
 	@echo "$(CYAN)MLX42, fractol .o & .a files and GLFW has been removed.$(DEF_COLOR)"

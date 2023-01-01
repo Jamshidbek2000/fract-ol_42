@@ -6,7 +6,7 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 16:00:27 by jergashe          #+#    #+#             */
-/*   Updated: 2022/12/31 19:46:26 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/01 11:59:11 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,12 @@ void			julia(double y, double x);
 // BURNING_SHIP.C
 void			burning_ship(void);
 
+// INIT.C
+t_point			*init_point(double y, double x);
+t_axe			*init_axe(double start_y, double start_x, double end_y,
+					double end_x);
+t_mouse			*init_mouse(void);
+
 // DRAW_MANDELBROT.C
 void			draw_mandelbrot(t_instances *instances);
 
@@ -84,11 +90,6 @@ void			draw_burning_ship(t_instances *instances);
 void			add_mandelbrot_hooks(t_instances *instances);
 void			add_julia_hooks(t_instances *instances);
 void			add_burning_ship_hooks(t_instances *instances);
-void			common_keyhooks(void *param);
-
-// SCROLL_HOOK.C
-void			scrollhook(double xdelta, double ydelta,
-					void *param);
 
 // KEYBOARD_MANDELBROT.C
 void			mandelbrot_keyhook(void *param);
@@ -100,6 +101,8 @@ void			julia_keyhook(void *param);
 void			burning_ship_keyhook(void *param);
 
 // ZOOM.C
+void			scrollhook(double xdelta, double ydelta,
+					void *param);
 void			multiply_axe_val_by(t_axe *axe, double mult);
 void			set_axe_offset(t_instances *instances);
 void			zoom_in(t_instances *instances);
@@ -113,38 +116,33 @@ void			move_imaginary(t_instances *instances, double move_by);
 void			color_pixel_by_iter(int y, int x, int iter,
 					t_instances *instances);
 void			change_color(t_instances *instances);
+uint32_t		get_rgba(int r, int g, int b, int a);
 
-// NEEEEEEEEW
+// COLORS_1.C
 uint32_t		ft_color_1(int iter);
 uint32_t		ft_color_2(int iter);
 uint32_t		ft_color_3(int iter);
 uint32_t		ft_color_4(int iter);
 uint32_t		ft_color_5(int iter);
+
+// COLORS_2.C
 uint32_t		ft_color_6(int iter);
 uint32_t		ft_color_7(int iter);
 uint32_t		ft_color_8(int iter);
 uint32_t		ft_color_9(int iter);
 
-// PALETTES.C
-uint32_t		get_rgba(int r, int g, int b, int a);
-
-//TERMINATE.C
-void			free_instances(t_instances *instances);
-void			terminate(t_instances *instances);
-void			leak_check(void);
-
-// UTILS.c
+// INSTRUCTIONS.C
 void			put_instructions_on_screen(t_instances *instances);
-void			print_iter(t_instances *instances);
-t_point			*init_point(double y, double x);
-t_axe			*init_axe(double start_y, double start_x, double end_y,
-					double end_x);
-t_mouse			*init_mouse(void);
 
+// UTILS.C
 void			get_mouse_coordinates(t_instances *instances);
 double			get_height_of_axe(t_axe *axe);
 double			get_width_of_axe(t_axe *axe);
 double			get_y_scaled_to_point(int y, t_instances *instances);
 double			get_x_scaled_to_point(int x, t_instances *instances);
+
+//TERMINATE.C
+void			terminate(t_instances *instances);
+void			leak_check(void);
 
 #endif
