@@ -6,7 +6,7 @@
 #    By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 11:33:08 by jergashe          #+#    #+#              #
-#    Updated: 2022/12/31 20:01:05 by jergashe         ###   ########.fr        #
+#    Updated: 2023/01/06 14:56:42 by jergashe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,7 @@ BWhite = \033[1;37m
 all: $(NAME)
 
 # compiling 
-$(NAME):$(MLX42) $(OBJS) $(GLFW3) $(LIBFT)
+$(NAME):$(GLFW3) $(MLX42) $(OBJS) $(LIBFT)
 	@echo "$(YELLOW)Compiling: $(DEF_COLOR)$(CYAN)$(NAME)$(DEF_COLOR)"
 	@$(CC) $(CFLAGS) -o $(NAME) $(SRCS) $(LIBFT) \
 	$(MLX42) $(GLFW3) -framework Cocoa -framework OpenGL -framework IOKit
