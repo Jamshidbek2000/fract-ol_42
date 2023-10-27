@@ -7,6 +7,14 @@ Fractol is a graphical project, where different models of fractol need to be imp
 * Rendering
 * Graphical interface
 
+## Instructions
+1. make
+2. ./fractol
+	* mandelbrot
+	* burning_ship
+	* julia y x
+		* y and x being floating numbers, like -1.476 and 0.7449
+
 ### Mandelbrot
 https://github.com/Jamshidbek2000/fract-ol_42/assets/106934634/ef54f200-cecb-4aa0-ba03-e2850a0dcb26
 
