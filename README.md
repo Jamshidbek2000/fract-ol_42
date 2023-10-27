@@ -1,5 +1,12 @@
 # Fractol
 
+## About
+Fractol is a graphical project, where different models of fractol need to be implemented, such as Mandelbrot, Burning ship and julia.
+
+## What I have learned doing the project
+* Rendering
+* Graphical interface
+
 ### Mandelbrot
 https://github.com/Jamshidbek2000/fract-ol_42/assets/106934634/ef54f200-cecb-4aa0-ba03-e2850a0dcb26
 
